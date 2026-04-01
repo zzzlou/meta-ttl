@@ -16,20 +16,22 @@ meta-ttl/
   webarena/               # WebArena evaluation (baselines + meta-agent)
   webarena_meta_training/ # WebArena evolutionary meta-training (outer loop)
   rllm/                   # Shared library: agents, environments, runners
-  requirements.md         # Python dependency snapshot
+  requirements.txt        # Frozen Python dependency snapshot
 ```
 
 ## Environment Setup
 
-The validated environment uses the `jericho_min` conda env.
+Create a fresh conda environment, then install the frozen Python dependencies from [`requirements.txt`](./requirements.txt). The name `jericho_min` refers to the authors' original validation environment and is not a required environment name.
 
 ```bash
-conda activate jericho_min
+conda create -n meta-ttl python -y
+conda activate meta-ttl
 cd /path/to/meta-ttl
+pip install -r requirements.txt
 ```
 
 Additional references:
-- Frozen Python dependency snapshot: [`requirements.md`](./requirements.md)
+- Frozen Python dependency snapshot: [`requirements.txt`](./requirements.txt)
 - WebArena env vars: [`webarena/env_setup.txt`](./webarena/env_setup.txt)
 
 WebArena additionally requires the sites referenced in `webarena/env_setup.txt` to be reachable, BrowserGym / Playwright installed, and browser automation allowed on the machine.
@@ -143,4 +145,4 @@ The script builds domain-aware train/val/eval splits, then optimizes the meta-pr
 
 - Baseline evaluation and meta-agent evaluation are intentionally separate workflows. In Jericho, `evaluate_baselines.py` runs actor-only agents while `evaluate.py` runs the full actor + meta-agent loop. The same separation applies to WebArena.
 - The evolutionary meta-training scripts optimize the meta-prompt (adaptation policy) offline. At test time, the learned meta-prompt is frozen and applied zero-shot to unseen tasks.
-- For a fully scripted environment bootstrap, use [`requirements.md`](./requirements.md) as the Python package snapshot and add the machine-specific WebArena/browser setup on top.
+- For a fully scripted environment bootstrap, create a fresh conda environment, install [`requirements.txt`](./requirements.txt), and then add the machine-specific WebArena/browser setup on top.

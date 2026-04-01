@@ -1,12 +1,10 @@
-# Requirements Snapshot
-
-This file is a literal `pip freeze` snapshot from the validated `jericho_min` conda environment.
-
-- It is a reproducibility record, not a hand-maintained minimal dependency list.
-- It does not capture non-Python prerequisites such as running WebArena sites, browser binaries, or system libraries.
-- The repo uses the local checkout's `rllm/` package from the repository root; this snapshot is for third-party dependencies.
-
-```text
+# Frozen third-party Python dependencies for Meta-TTL.
+# Exported from the authors' validated `jericho_min` conda environment.
+# You do not need to create an environment with that exact name.
+# This is a reproducibility snapshot, not a hand-maintained minimal dependency list.
+# It does not include non-Python prerequisites such as WebArena sites,
+# browser binaries, or system libraries.
+# The local `rllm/` package is provided by this repository checkout.
 aiohappyeyeballs==2.6.1
 aiohttp==3.13.5
 aiolimiter==1.2.1
@@ -213,4 +211,3 @@ xxhash==3.6.0
 yarl==1.23.0
 zipp==3.23.0
 zstandard==0.25.0
-```
