@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "gitlab"
+  ],
+  "task_id": 96,
+  "require_login": true,
+  "storage_state": "./.auth/gitlab_state.json",
+  "start_url": "__GITLAB__",
+  "geolocation": null,
+  "intent_template": "Post \"{{content}}\" for the merge request related to {{mr}} in {{repo}} project",
+  "instantiation_dict": {
+    "mr": "color ulitity",
+    "repo": "account_06.com",
+    "content": "Good idea"
+  },
+  "intent": "Post \"Good idea\" for the merge request related to color ulitity in account_06.com project",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "__GITLAB__/account_06/account_06.com/-/merge_requests/1071",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "document.querySelector('[id=\"notes-list\"').lastElementChild.querySelector('.timeline-discussion-body').outerText",
+        "required_contents": {
+          "exact_match": "Good idea"
+        }
+      }
+    ]
+  },
+  "intent_template_id": 348,
+  "old_task_id": 392
+}

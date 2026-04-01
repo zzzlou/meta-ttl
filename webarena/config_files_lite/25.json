@@ -1,0 +1,28 @@
+{
+  "sites": [
+    "gitlab"
+  ],
+  "task_id": 25,
+  "require_login": true,
+  "storage_state": "./.auth/gitlab_state.json",
+  "start_url": "__GITLAB__",
+  "geolocation": null,
+  "intent_template": "Display the list of issues in the {{repo}} repository that have labels related to {{label}}",
+  "instantiation_dict": {
+    "label": "questions",
+    "repo": "account_16/ffmpeg-python"
+  },
+  "intent": "Display the list of issues in the account_16/ffmpeg-python repository that have labels related to questions",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "__GITLAB__/account_17/ffmpeg-python/-/issues/?sort=created_date&state=opened&label_name%5B%5D=question&first_page_size=20",
+    "program_html": [],
+    "url_note": "GOLD in PRED"
+  },
+  "intent_template_id": 349,
+  "old_task_id": 103
+}

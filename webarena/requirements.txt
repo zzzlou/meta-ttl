@@ -1,0 +1,11 @@
+browsergym-core>=0.3
+browsergym-experiments>=0.3
+openai>=1.35.4,<1.36
+tiktoken
+huggingface_hub
+contexttimer
+ipython
+pyyaml>=6
+pandas
+joblib
+transformers

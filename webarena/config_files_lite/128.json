@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "gitlab"
+  ],
+  "task_id": 128,
+  "require_login": true,
+  "storage_state": "./.auth/gitlab_state.json",
+  "start_url": "__GITLAB__",
+  "geolocation": null,
+  "intent_template": "Invite {{collaborator_account_list}} as collaborator to {{repo}} repo",
+  "instantiation_dict": {
+    "collaborator_account_list": "account_40",
+    "repo": "gimmiethat.space"
+  },
+  "intent": "Invite account_40 as collaborator to gimmiethat.space repo",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "__GITLAB__/account_09/gimmiethat.space/-/project_members",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "@account_19",
+            "@account_57"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 293,
+  "old_task_id": 567
+}
